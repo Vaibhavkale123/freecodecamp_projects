@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Python doc</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<!-- 
+
+Hello Camper!
+
+For now, the test suite only works in Chrome! Please read the README below in the JS Editor before beginning. Feel free to delete this message once you have read it. Good luck and Happy Coding! 
+
+- The freeCodeCamp Team 
+
+-->
+<!--User Story #1: I can see a main element with a corresponding id="main-doc", which contains the page's main content (technical documentation).
+
+User Story #2: Within the #main-doc element, I can see several section elements, each with a class of main-section. There should be a minimum of 5.
+
+User Story #3: The first element within each .main-section should be a header element which contains text that describes the topic of that section.
+
+User Story #4: Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding id="JavaScript_and_Java").
+
+User Story #5: The .main-section elements should contain at least 10 p elements total (not each).
+
+User Story #6: The .main-section elements should contain at least 5 code elements total (not each).
+
+User Story #7: The .main-section elements should contain at least 5 li items total (not each).
+
+User Story #8: I can see a nav element with a corresponding id="navbar".
+
+User Story #9: The navbar element should contain one header element which contains text that describes the topic of the technical documentation.
+
+User Story #10: Additionally, the navbar should contain link (a) elements with the class of nav-link. There should be one for every element with the class main-section.
+
+User Story #11: The header element in the navbar must come before any link (a) elements in the navbar.
+
+User Story #12: Each element with the class of nav-link should contain text that corresponds to the header text within each section (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
+
+User Story #13: When I click on a navbar element, the page should navigate to the corresponding section of the main-doc element (e.g. If I click on a nav-link element that contains the text "Hello world", the page navigates to a section element that has that id and contains the corresponding header.
+
+User Story #14: On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user.
+
+User Story #15: My Technical Documentation page should use at least one media query.
+-->
+<!doctype html>
+<html>
+  <main id ='main-doc'>
+    <section class="main-section" id='Introduction'>
+      <header >Introduction</header>
+      <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.</p>
+      <p>It is used for:<br>
+<ul>
+  <li>web development (server-side),</li>
+    <li> software development, </li>
+     <li>mathematics, </li>
+    <li> system scripting. </li>
+  <li> AI and ML</li>
+  <li> Automation</li>
+</p>
+    </section>
+    
+    <section class="main-section" id='New_In_Python 3.9'>
+    <header>New In Python 3.9</header>
+    <p>When Python 2.7 was still supported, a lot of functionality in Python 3 was kept for backward compatibility with Python 2.7. With the end of Python 2 support, these backward compatibility layers have been removed, or will be removed soon. Most of them emitted a DeprecationWarning warning for several years. For example, using collections.Mapping instead of collections.abc.Mapping emits a DeprecationWarning since Python 3.3, released in 2012.</p>
+    <p></p>
+    </section>
+    
+    <section class="main-section" id='if_Statements'>
+      <header>if Statements</header>
+      <p style="white-space: pre">Perhaps the most well-known statement type is the if statement. For example:
+
+
+>>> x = int(input("Please enter an integer: "))
+Please enter an integer: 42
+>
+
+There can be zero or more elif parts, and the else part is optional. The keyword ‘elif’ is short for ‘else if’, and is useful to avoid excessive indentation. An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages.</p><code> >if x < 0:
+...     x = 0
+...     print('Negative changed to zero')
+... elif x == 0:
+...     print('Zero')
+... elif x == 1:
+...     print('Single')
+... else:
+...     print('More')
+...
+More</code></>
+      </section>
+      
+    <section class="main-section" id='Loop'>
+      <header >Loop</header>
+      <p>The for statement in Python differs a bit from what you may be used to in C or Pascal. Rather than always iterating over an arithmetic progression of numbers (like in Pascal), or giving the user the ability to define both the iteration step and halting condition (as C), Python’s for statement iterates over the items of any sequence (a list or a string), in the order that they appear in the sequence</p>
+    </section>
+    
+    
+    <section class="main-section" id='Break_Contiue_and_Pass_statement'>
+      <header >Break Contiue and Pass statement</header>
+      <p style="white-space: pre">he break statement, like in C, breaks out of the innermost enclosing for or while loop.
+
+Loop statements may have an else clause; it is executed when the loop terminates through exhaustion of the iterable (with for) or when the condition becomes false (with while), but not when the loop is terminated by a break statement. This is exemplified by the following loop, which searches for prime numbers:</p>
+      <code>> for n in range(2, 10):
+...     for x in range(2, n):
+...         if n % x == 0:
+...             print(n, 'equals', x, '*', n//x)
+...             break
+...     else:
+...         # loop fell through without finding a factor
+...         print(n, 'is a prime number')
+...
+2 is a prime number
+3 is a prime number
+4 equals 2 * 2
+5 is a prime number
+6 equals 2 * 3
+7 is a prime number
+8 equals 2 * 4
+9 equals 3 * 3
+      </code></p><p style="white-space: pre">Yes, this is the correct code. Look closely: the else clause belongs to the for loop, not the if statement.)
+
+When used with a loop, the else clause has more in common with the else clause of a try statement than it does with that of if statements: a try statement’s else clause runs when no exception occurs, and a loop’s else clause runs when no break occurs. For more on the try statement and exceptions, see Handling Exceptions.
+
+The continue statement, also borrowed from C, continues with the next iteration of the loop:
+<code>
+>>> for num in range(2, 10):
+...     if num % 2 == 0:
+...         print("Found an even number", num)
+...         continue
+...     print("Found an odd number", num)
+Found an even number 2
+Found an odd number 3
+Found an even number 4
+Found an odd number 5
+Found an even number 6
+Found an odd number 7
+Found an even number 8
+Found an odd number 9
+      </code>
+</p><p>The continue statement, also borrowed from C, continues with the next iteration of the loop:</p>
+      <code>
+
+>>> for num in range(2, 10):
+...     if num % 2 == 0:
+...         print("Found an even number", num)
+...         continue
+...     print("Found an odd number", num)
+Found an even number 2
+Found an odd number 3
+Found an even number 4
+Found an odd number 5
+Found an even number 6
+Found an odd number 7
+Found an even number 8
+Found an odd number 9
+      </code><p>
+      4.5. pass Statements
+
+The pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. For example:</p>
+      <code>
+>>>
+
+>>> while True:
+...     pass  # Busy-wait for keyboard interrupt (Ctrl+C)
+...
+      </code>
+<p>
+      This is commonly used for creating minimal classes:</p>
+<code>>>>
+
+>>> class MyEmptyClass:
+...     pass
+...
+      </code>
+Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, allowing you to keep thinking at a more abstract level. The pass is silently ignored:</p>
+<code>
+
+>>> def initlog(*args):
+...     pass   # Remember to implement this!
+...
+
+      </code>
+
+    </section>
+  </main>
+<!-- partial -->
+  
+</body>
+</html>

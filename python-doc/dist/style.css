@@ -1,0 +1,3 @@
+Each <section> element with the class of "main-section" should also have an id comprised of the <header> innerText contained within it, with underscores in place of spaces. The id may include special characters if there are special characters in the respective <header> innerText. (e.g. The <section> that contains the header, "JavaScript & Java", should have a corresponding id="JavaScript_&_Java").
+
+Some "main-section" elements are missing the following ids (don't forget to replace spaces with underscores!) : INTRODUCTION,WHAT’S_NEW_IN_PYTHON_3.9,I
